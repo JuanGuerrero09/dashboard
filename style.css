@@ -1,6 +1,7 @@
 *{
     margin: 0;
     font-family: 'Roboto', Courier, monospace;
+    box-sizing: border-box;
 }
 
 :root{
@@ -16,7 +17,7 @@
 body{
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 12vh 1fr;
+    grid-template-rows: 15vh 1fr;
     overflow: none;
     width: 100vw;
     height: 100vh;
@@ -24,13 +25,14 @@ body{
 
 h2{
     font-size: 1.5rem;
-    padding: 15px;
+    padding-top: 15px;
+    margin: 0;
     color: var(--darkerTwo);
 }
 
 header{
     background-color: white;
-    height: 12vh;
+    height: 15vh;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
     font-size: 1rem;
@@ -51,18 +53,22 @@ header{
     align-items: center;
 }
 
-.up > input{
+.search > input{
     height: 1.4rem;
+    width: 40vw;
     margin-top: 5px;
     margin-left: 5px;
+    background-color: var(--light);
+    border: var(--dark) 2px solid;
 }
 
 .greeting{
     display: flex;
     flex-direction: column;
+    align-items: left;
 }
 
-.header > input{
+.search > input{
     border-radius: 16px;
 }
 
@@ -74,17 +80,22 @@ header{
     grid-column: 1 / 2;
     grid-row: 1 / 3;
     color: white;
-    font-size: 1.2rem;
+    font-size: 1.25rem;
     display: grid;
-    grid-template-rows: 80px 250px 250px 1fr;
+    grid-template-rows: 80px 300px 250px 1fr;
+    justify-content: left;
     position: sticky;
     overflow: none;
 }
 
 .sidebar-section{
     color: white;
-    margin: 1em 50px;
+    margin: 20px 15px;
     font-size: 1em;
+}
+
+.sidebar-section > ul > li:hover{
+    font-size: 1.05em;
 }
 
 ul, li { /* reset the margin and padding */
@@ -110,7 +121,12 @@ main{
 .projects{
     grid-column: 1 / 2;
     grid-row: 1 / 3;
-    
+}
+
+.projects > h2{
+    position: relative;
+    left: 15px;
+    margin-bottom: 10px;
 }
 
 .container-cards{
@@ -124,24 +140,39 @@ main{
     background-color: var(--brighter);
     border-radius: 5%;
     margin: 15px;
-    padding: 5px;
+    padding: 15px;
     border: #064e3b solid 1.5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-.card > h3{
+.card > .icons{
+    color: var(--darkerOne);
+    text-align: right;
+    font-size: 1.2rem;
+}
+
+.card > .icons > i:hover{
+    color: var(--medium);
+}
+
+.text > h3, .card > h3{
     color: var(--darkerOne);
     --darkerTwo: #14532d;
     margin: 5px 0;
 }
 
-.card > p {
+.text > p, .card > p {
     color: var(--dark);
 }
 
 .small{
     font-size: 0.8rem;
     padding: 20px;
+    height: auto;
 }
+
 
 
 .announcements{
@@ -151,5 +182,43 @@ main{
 .trending{
     grid-column: 2 / 3;
     position: relative;
-    bottom: 60%;
+}
+
+.trending > .card
+
+.profile{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    margin: 5px;
+}
+
+.profile-text > h2{
+    padding-top: 0;
+}
+
+.profile-text > h5{
+    color: var(--dark);
+}
+
+img{
+    width: 45px;
+    border-radius: 50%;
+    position: relative;
+    right: 10px;
+}
+
+.buttons{
+    display: flex;
+}
+
+button{
+    background-color:var(--medium);
+    color: #fff;
+    border:none;
+    border-radius:10px;
+    margin: 0 2vh;
+    width: 100px;
+    height: 35px;
+    font-size: 1.2rem;
 }
